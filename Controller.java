@@ -30,7 +30,11 @@ public class RegistryController {
 		return new ResponseEntity<String>( registryService.registerUser(name, userName, password, phoneNumber),HttpStatus.OK);
 	}
 	
-	
+//Added+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@GetMapping(value="login")
+	public String login(@RequestParam long phoneNumber,@RequestParam String password) throws BookStoreException {
+		return registryService.loginWithPhoneNumber(phoneNumber, password);
+	}	
 	
 	
 
